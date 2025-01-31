@@ -1,0 +1,36 @@
+API
+
+A Web API, or Web Application Programming Interface, is a set of rules and specifications that enable different software applications to communicate over the web.
+
+Representational State Transfer:
+REST APIs are a popular architectural style for building web services. They use a stateless, client-server communication model where clients send requests to servers to access or manipulate resources. REST APIs utilize standard HTTP methods (GET, POST, PUT, DELETE) to perform CRUD (Create, Read, Update, Delete) operations on resources identified by unique URLs. 
+
+Simple Object Access Protocol:
+SOAP APIs follow a more formal and standardized protocol for exchanging structured information. They use XML to define messages, which are then encapsulated in SOAP envelopes and transmitted over network protocols like HTTP or SMTP.
+
+
+GraphQL
+GraphQL is a relatively new query language and runtime for APIs. Unlike REST APIs, which expose multiple endpoints for different resources, GraphQL provides a single endpoint where clients can request the data they need using a flexible query language. This eliminates the problem of over-fetching or under-fetching data, which is common in REST APIs. 
+
+
+
+| Field | Represents a specific piece of data you want to retrieve (e.g., name, email). | name, email |
+| Relationship | Indicates a connection between different types of data (e.g., a user's posts). | posts |
+| Nested Object | A field that returns another object, allowing you to traverse deeper into the data graph. | posts { title, body } |
+| Argument | Modifies the behavior of a query or field (e.g., filtering, sorting, pagination). | posts(limit: 5) (retrieves the first 5 posts of a user) |
+
+
+
+
+
+| Query Parameters | Appended to the endpoint URL after a question mark (?). Used for filtering, sorting, or pagination. | /users?limit=10&sort=name |
+| Path Parameters | Embedded directly within the endpoint URL. Used to identify specific resources. | /products/{id}pen_spark |
+| Request Body Parameters | Sent in the body of POST, PUT, or PATCH requests. Used to create or update resources. | { "name": "New Product", "price": 99.99 } |
+
+
+The specification details five endpoints, each with a specific purpose and method:
+1. GET / (Read Root): This fetches the root resource. It likely returns a basic welcome message or API information.
+2. GET /items/{item_id} (Read Item): Retrieves a specific item identified by item_id.
+3. DELETE /items/{item_id} (Delete Item): Deletes an item identified by item_id.
+4. PUT /items/{item_id} (Update Item): Updates an existing item with the provided data.
+5. POST /items/ (Create Or Update Item): This function creates a new item or updates an existing one if the item_id matches.
